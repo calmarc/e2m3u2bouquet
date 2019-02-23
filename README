@@ -1,0 +1,5 @@
+quick hack.. to generate 1:1 picons like the sender name - when
+generating picons (i.e. -P)
+
+Since VTI can't handle lowercase ones, it seems.
+
