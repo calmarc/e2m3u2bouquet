@@ -1,5 +1,16 @@
-quick hack.. to generate 1:1 picons like the sender name - when
-generating picons (i.e. -P)
+quick hack (line 367...) .. to generate 1:1 picon's identical to the sender name - when
+generating picons (i.e. -P) (instead of lowercase etc)
 
 Since VTI can't handle lowercase ones, it seems.
+
+so.. ssh into box
+cd /etc/enigma2/e2m3u2bouquet
+rm e2m3u2bouquet.py
+wget https://raw.githubusercontent.com/calmarc/e2m3u2bouquet/master/e2m3u2bouquet.py
+chmod a+x e2m3u2bouquet.py
+# either put in config: <picons>1</picons>
+# or issue with -P switch
+./e2m3u2bouquet.py
+
+And it should generate picons with just the name as the senders - and therefore works also on VTI.
 
