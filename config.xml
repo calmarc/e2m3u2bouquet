@@ -1,32 +1,32 @@
-<!--M
-    E2m3u2bouquet supplier config fileM
-    Add as many suppliers as required and run the script with no parametersM
-    this config file will be used and the relevant bouquets set up for all suppliers enteredM
-    0 = No/falseM
-    1 = Yes/trueM
-    For elements with <![CDATA[]] enter value between brackets e.g. <![CDATA[mypassword]]>M
--->M
-<config>M
-    <supplier>M
-        <name>ip</name><!-- Supplier Name -->M
-        <enabled>1</enabled><!-- Enable or disable the supplier (0 or 1) -->M
+<!--
+    E2m3u2bouquet supplier config file
+    Add as many suppliers as required and run the script with no parameters
+    this config file will be used and the relevant bouquets set up for all suppliers entered
+    0 = No/false
+    1 = Yes/true
+    For elements with <![CDATA[]] enter value between brackets e.g. <![CDATA[mypassword]]>
+-->
+<config>
+    <supplier>
+        <name>ip</name><!-- Supplier Name -->
+        <enabled>1</enabled><!-- Enable or disable the supplier (0 or 1) -->
         <m3uurl><![CDATA[http://client.vpnXXXX.ws:8080/get.php?username=XXXXXX&password=XXXXXXX&type=m3u_plus&output=ts]]></m3uurl><!-- Extended M3U url -->
-M
-        <epgurl><![CDATA[http://epg.safeip.lXXX/XXg/eXXXxml.gz]]></epgurl><!-- XMLTV EPG url -->M
-        <username><![CDATA[]]></username><!-- (Optional) will replace USERNAME placeholder in urls -->M
-        <password><![CDATA[]]></password><!-- (Optional) will replace PASSWORD placeholder in urls -->M
-        <iptvtypes>0</iptvtypes><!-- Change all streams to IPTV type (0 or 1) -->M
-        <streamtypetv></streamtypetv><!-- (Optional) Custom TV stream type (e.g. 1, 4097, 5001 or 5002) -->M
-        <streamtypevod></streamtypevod><!-- (Optional) Custom VOD stream type (e.g. 4097, 5001 or 5002) -->M
-        <multivod>1</multivod><!-- Split VOD into seperate categories (0 or 1) -->M
-        <allbouquet>0</allbouquet><!-- Create all channels bouquet -->M
-        <picons>0</picons><!-- Automatically download Picons (0 or 1) -->M
-        <iconpath>/usr/share/enigma2/picon/</iconpath><!-- Location to store picons -->M
-        <xcludesref>1</xcludesref><!-- Disable service ref overriding from override.xml file (0 or 1) -->M
-        <bouqueturl><![CDATA[]]></bouqueturl><!-- (Optional) url to download providers bouquet - to map custom service references -->M
+
+        <epgurl><![CDATA[http://epg.safeip.lXXX/XXg/eXXXxml.gz]]></epgurl><!-- XMLTV EPG url -->
+        <username><![CDATA[]]></username><!-- (Optional) will replace USERNAME placeholder in urls -->
+        <password><![CDATA[]]></password><!-- (Optional) will replace PASSWORD placeholder in urls -->
+        <iptvtypes>0</iptvtypes><!-- Change all streams to IPTV type (0 or 1) -->
+        <streamtypetv></streamtypetv><!-- (Optional) Custom TV stream type (e.g. 1, 4097, 5001 or 5002) -->
+        <streamtypevod></streamtypevod><!-- (Optional) Custom VOD stream type (e.g. 4097, 5001 or 5002) -->
+        <multivod>1</multivod><!-- Split VOD into seperate categories (0 or 1) -->
+        <allbouquet>0</allbouquet><!-- Create all channels bouquet -->
+        <picons>0</picons><!-- Automatically download Picons (0 or 1) -->
+        <iconpath>/usr/share/enigma2/picon/</iconpath><!-- Location to store picons -->
+        <xcludesref>1</xcludesref><!-- Disable service ref overriding from override.xml file (0 or 1) -->
+        <bouqueturl><![CDATA[]]></bouqueturl><!-- (Optional) url to download providers bouquet - to map custom service references -->
         <bouquetdownload>0</bouquetdownload><!-- Download providers bouquet (use default url) must have username and password set above - to map custom servic
-e references -->M
-        <bouquettop>0</bouquettop><!-- Place IPTV bouquets at top (0 or 1)-->M
-    </supplier>M
+e references -->
+        <bouquettop>0</bouquettop><!-- Place IPTV bouquets at top (0 or 1)-->
+    </supplier>
 </config>
 
