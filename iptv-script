@@ -1,0 +1,64 @@
+#/bin/bash
+
+# https://www.suls.co.uk/enigma2-iptv-bouquets-with-epg/
+# https://github.com/su1s/e2m3u2bouquet
+# https://github.com/calmarc/e2m3u2bouquet
+
+echo ================================
+echo issue e2m2u2bouquet script
+echo ---------------------------------
+
+# in config.xml - else: -n 'ip' -M -a -m "http://clie.....S&type=m3u_plus&output=ts" -e "http://..../epg/....ml.gz"
+
+/etc/enigma2/e2m3u2bouquet/e2m3u2bouquet.py
+
+# the  ip-sort-override.xml file.. takes care of the normal ones, but the vod needs to get deleted anyway manually here
+
+echo 'delete all not wanted _vod bouquets..'
+
+#create tmp folder
+
+cd /etc/enigma2/
+mkdir tmp
+
+# move wanted vod lists into tmp
+
+mv *vod_germany.tv* tmp/
+mv *vod_xxx* tmp/
+
+# remove remaining vods
+
+rm /etc/enigma2/*ip_vod_*
+
+# remove vod's from  bouquets.tv"
+
+sed -i  '/suls_iptv_ip_vod/d' /etc/enigma2/bouquets.tv
+
+# add again those in tmp folder to the enigma2 folder and into bouquet.tv"
+
+cd /etc/enigma2/tmp/
+
+# shorten the name of the bouquets (on line 1 (0)):
+for file in *.tv; do sed -i '0,0s/- VOD - VOD/- VOD/' "${file}"; done
+
+# add bouquets to the bouquets.tv
+for file in *.tv; do echo "#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET \"${file}\" ORDER BY bouquet" >> /etc/enigma2/bouquets.tv; echo Add: $file; done
+
+mv /etc/enigma2/tmp/* /etc/enigma2/
+rmdir /etc/enigma2/tmp/
+
+cd /etc/enigma2/
+
+# remove those <n/a> placeholders thingies
+
+for file in *suls*; do sed -i '/1:832:d:0:0:0:0:0/d' "${file}"; done
+
+echo
+echo ... all done.... reload
+echo =======================
+echo
+echo
+
+wget -qO - "http://127.0.0.1/web/servicelistreload?mode=2";
+wget -qO - "http://127.0.0.1/web/servicelistreload?mode=2";
+
