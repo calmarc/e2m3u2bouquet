@@ -20,7 +20,7 @@
         <streamtypevod></streamtypevod><!-- (Optional) Custom VOD stream type (e.g. 4097, 5001 or 5002) -->
         <multivod>1</multivod><!-- Split VOD into seperate categories (0 or 1) -->
         <allbouquet>0</allbouquet><!-- Create all channels bouquet -->
-        <picons>0</picons><!-- Automatically download Picons (0 or 1) -->
+        <picons>1</picons><!-- Automatically download Picons (0 or 1) -->
         <iconpath>/usr/share/enigma2/picon/</iconpath><!-- Location to store picons -->
         <xcludesref>1</xcludesref><!-- Disable service ref overriding from override.xml file (0 or 1) -->
         <bouqueturl><![CDATA[]]></bouqueturl><!-- (Optional) url to download providers bouquet - to map custom service references -->

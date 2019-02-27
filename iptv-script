@@ -47,10 +47,10 @@ for file in *.tv; do echo "#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET \"${file}\"
 mv /etc/enigma2/tmp/* /etc/enigma2/
 rmdir /etc/enigma2/tmp/
 
-cd /etc/enigma2/
 
 # remove those <n/a> placeholders thingies
 
+cd /etc/enigma2/
 for file in *suls*; do sed -i '/1:832:d:0:0:0:0:0/d' "${file}"; done
 
 echo
