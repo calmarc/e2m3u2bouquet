@@ -4,15 +4,24 @@
 # https://github.com/su1s/e2m3u2bouquet
 # https://github.com/calmarc/e2m3u2bouquet
 
+echo
 echo ================================
 echo issue e2m2u2bouquet script
 echo ---------------------------------
+echo
 
 # in config.xml - else: -n 'ip' -M -a -m "http://clie.....S&type=m3u_plus&output=ts" -e "http://..../epg/....ml.gz"
 
 /etc/enigma2/e2m3u2bouquet/e2m3u2bouquet.py
 
 # the  ip-sort-override.xml file.. takes care of the normal ones, but the vod needs to get deleted anyway manually here
+#
+
+echo
+echo ================================
+echo issue calmar modification
+echo ---------------------------------
+echo
 
 echo 'delete all not wanted _vod bouquets..'
 
